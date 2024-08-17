@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.keyExchange.KeyExchangeFragment">
+
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="284dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:gravity="left"
+        android:hint="Enter your number"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_senderPublicKey_sharedSecret"
+        android:layout_width="377dp"
+        android:layout_height="198dp"
+        android:layout_marginBottom="68dp"
+        android:background="#caf0c0"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_privateKey_sharedKeyLayout"
+        app:layout_constraintVertical_bias="0.144">
+
+        <EditText
+            android:id="@+id/senderPublicKeyEditText"
+            android:layout_width="348dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:hint="Enter public key from Sender"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="379dp" />
+
+        <Button
+            android:id="@+id/sharedSecretButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Generate Shared Secret"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/senderPublicKeyEditText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <RelativeLayout
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/copyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/sharedSecretTextView"
+                android:src="@drawable/copy_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sharedSecretTextView"
+                android:layout_width="208dp"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="66dp"
+                tools:layout_editor_absoluteY="818dp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_privateKey_sharedKeyLayout"
+        android:layout_width="377dp"
+        android:layout_height="210dp"
+        android:background="#afd4f0"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber"
+        app:layout_constraintVertical_bias="0.032">
+
+        <EditText
+            android:id="@+id/privateKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter private key"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/publicKeyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Generate Public Key" />
+
+        <RelativeLayout
+            android:layout_width="229dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/sharedKey"
+                android:src="@drawable/share_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sharedKey"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

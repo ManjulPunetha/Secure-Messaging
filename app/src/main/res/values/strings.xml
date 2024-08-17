@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Secure Messaging</string>
+    <string name="title_home">Messaging</string>
+    <string name="title_dashboard">Key Exchange</string>
+</resources>
